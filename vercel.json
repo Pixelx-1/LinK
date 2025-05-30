@@ -1,16 +1,11 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build && cd ../backend && npm install && npm run build",
   "outputDirectory": "frontend/build",
-  "functions": {
-    "backend/src/app.ts": {
-      "maxDuration": 30
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/src/app.ts"
+      "dest": "/api/index.js"
     },
     {
       "handle": "filesystem"
