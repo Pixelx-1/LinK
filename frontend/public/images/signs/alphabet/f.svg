@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+    <rect width="150" height="150" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    
+    <!-- ASL F - Index and thumb touch, others extended -->
+    <text x="75" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" fill="#000">👌</text>
+    
+    <text x="75" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#374151">ASL F</text>
+</svg>

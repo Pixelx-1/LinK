@@ -1,0 +1,339 @@
+{
+  "signs": {
+    "hello": {
+      "category": "greetings",
+      "description": "Flat hand at forehead, move forward slightly",
+      "difficulty": "easy",
+      "usage": "Standard greeting in ASL"
+    },
+    "thank_you": {
+      "category": "greetings",
+      "description": "Flat hand touches chin, moves forward",
+      "difficulty": "easy",
+      "usage": "Express gratitude"
+    },
+    "please": {
+      "category": "greetings",
+      "description": "Flat hand circles on chest",
+      "difficulty": "easy",
+      "usage": "Polite request"
+    },
+    "sorry": {
+      "category": "greetings",
+      "description": "Fist on chest, circular motion",
+      "difficulty": "easy",
+      "usage": "Apologize or express sympathy"
+    },
+    "goodbye": {
+      "category": "greetings",
+      "description": "Wave hand or finger wiggle",
+      "difficulty": "easy",
+      "usage": "Farewell greeting"
+    },
+    "nice_to_meet_you": {
+      "category": "greetings",
+      "description": "Complex phrase: NICE + MEET + YOU",
+      "difficulty": "medium",
+      "usage": "First time meeting someone"
+    },
+    "mother": {
+      "category": "family",
+      "description": "Thumb touches chin",
+      "difficulty": "easy",
+      "usage": "Female parent"
+    },
+    "father": {
+      "category": "family",
+      "description": "Thumb touches forehead",
+      "difficulty": "easy",
+      "usage": "Male parent"
+    },
+    "sister": {
+      "category": "family",
+      "description": "L-hand at chin, moves down to meet other L-hand",
+      "difficulty": "medium",
+      "usage": "Female sibling"
+    },
+    "brother": {
+      "category": "family",
+      "description": "L-hand at forehead, moves down to meet other L-hand",
+      "difficulty": "medium",
+      "usage": "Male sibling"
+    },
+    "family": {
+      "category": "family",
+      "description": "F-hands form circle",
+      "difficulty": "medium",
+      "usage": "Related people group"
+    },
+    "friend": {
+      "category": "family",
+      "description": "Index fingers hook together twice",
+      "difficulty": "medium",
+      "usage": "Close companion"
+    },
+    "eat": {
+      "category": "food",
+      "description": "Fingertips to mouth repeatedly",
+      "difficulty": "easy",
+      "usage": "Consume food"
+    },
+    "drink": {
+      "category": "food",
+      "description": "C-hand to mouth, tilt up",
+      "difficulty": "easy",
+      "usage": "Consume liquid"
+    },
+    "water": {
+      "category": "food",
+      "description": "W-hand taps chin",
+      "difficulty": "easy",
+      "usage": "Clear liquid, H2O"
+    },
+    "milk": {
+      "category": "food",
+      "description": "Squeeze fist alternately",
+      "difficulty": "easy",
+      "usage": "Dairy beverage"
+    },
+    "coffee": {
+      "category": "food",
+      "description": "S-hand grinds on top of other S-hand",
+      "difficulty": "medium",
+      "usage": "Caffeinated beverage"
+    },
+    "bread": {
+      "category": "food",
+      "description": "Knife hand slices other hand",
+      "difficulty": "medium",
+      "usage": "Baked staple food"
+    },
+    "red": {
+      "category": "colors",
+      "description": "Index finger brushes lips downward",
+      "difficulty": "easy",
+      "usage": "Color of blood, fire"
+    },
+    "blue": {
+      "category": "colors",
+      "description": "B-hand shakes slightly",
+      "difficulty": "easy",
+      "usage": "Color of sky, ocean"
+    },
+    "green": {
+      "category": "colors",
+      "description": "G-hand shakes slightly",
+      "difficulty": "easy",
+      "usage": "Color of grass, plants"
+    },
+    "yellow": {
+      "category": "colors",
+      "description": "Y-hand shakes slightly",
+      "difficulty": "easy",
+      "usage": "Color of sun, banana"
+    },
+    "black": {
+      "category": "colors",
+      "description": "Index finger across forehead",
+      "difficulty": "easy",
+      "usage": "Absence of color"
+    },
+    "white": {
+      "category": "colors",
+      "description": "Five-hand on chest, pull out to closed hand",
+      "difficulty": "medium",
+      "usage": "Color of snow, milk"
+    },
+    "one": {
+      "category": "numbers",
+      "description": "Index finger extended up",
+      "difficulty": "easy",
+      "usage": "Number 1, single item"
+    },
+    "two": {
+      "category": "numbers",
+      "description": "Index and middle finger extended",
+      "difficulty": "easy",
+      "usage": "Number 2, pair"
+    },
+    "three": {
+      "category": "numbers",
+      "description": "Thumb, index, and middle finger extended",
+      "difficulty": "easy",
+      "usage": "Number 3, trio"
+    },
+    "five": {
+      "category": "numbers",
+      "description": "All five fingers extended",
+      "difficulty": "easy",
+      "usage": "Number 5, hand count"
+    },
+    "ten": {
+      "category": "numbers",
+      "description": "Thumb up, shake slightly",
+      "difficulty": "easy",
+      "usage": "Number 10, decimal base"
+    },
+    "today": {
+      "category": "time",
+      "description": "NOW + DAY combination",
+      "difficulty": "medium",
+      "usage": "Current day"
+    },
+    "tomorrow": {
+      "category": "time",
+      "description": "Thumbs-up moves forward from cheek",
+      "difficulty": "medium",
+      "usage": "Next day"
+    },
+    "yesterday": {
+      "category": "time",
+      "description": "Thumbs-up moves back from cheek",
+      "difficulty": "medium",
+      "usage": "Previous day"
+    },
+    "time": {
+      "category": "time",
+      "description": "Index finger taps wrist",
+      "difficulty": "easy",
+      "usage": "Clock time, duration"
+    },
+    "week": {
+      "category": "time",
+      "description": "One-hand slides across other palm",
+      "difficulty": "medium",
+      "usage": "Seven day period"
+    },
+    "month": {
+      "category": "time",
+      "description": "One-hand slides down other index finger",
+      "difficulty": "medium",
+      "usage": "Calendar month"
+    },
+    "go": {
+      "category": "verbs",
+      "description": "Index fingers point and move forward",
+      "difficulty": "easy",
+      "usage": "Move, travel, leave"
+    },
+    "come": {
+      "category": "verbs",
+      "description": "Index fingers point and move toward body",
+      "difficulty": "easy",
+      "usage": "Move toward speaker"
+    },
+    "see": {
+      "category": "verbs",
+      "description": "V-hand from eyes moves forward",
+      "difficulty": "easy",
+      "usage": "Visual perception"
+    },
+    "help": {
+      "category": "verbs",
+      "description": "Fist on flat palm, lift together",
+      "difficulty": "medium",
+      "usage": "Assist, support"
+    },
+    "work": {
+      "category": "verbs",
+      "description": "S-hands tap wrists together",
+      "difficulty": "medium",
+      "usage": "Employment, labor"
+    },
+    "play": {
+      "category": "verbs",
+      "description": "Y-hands shake alternately",
+      "difficulty": "medium",
+      "usage": "Recreation, games"
+    },
+    "what": {
+      "category": "questions",
+      "description": "Index finger shakes side to side",
+      "difficulty": "easy",
+      "usage": "Question word for things"
+    },
+    "where": {
+      "category": "questions",
+      "description": "Index finger shakes back and forth",
+      "difficulty": "easy",
+      "usage": "Question word for location"
+    },
+    "when": {
+      "category": "questions",
+      "description": "Index finger circles around other index finger",
+      "difficulty": "medium",
+      "usage": "Question word for time"
+    },
+    "who": {
+      "category": "questions",
+      "description": "Index finger circles around lips",
+      "difficulty": "medium",
+      "usage": "Question word for person"
+    },
+    "why": {
+      "category": "questions",
+      "description": "Touch forehead, then Y-hand shakes",
+      "difficulty": "medium",
+      "usage": "Question word for reason"
+    },
+    "how": {
+      "category": "questions",
+      "description": "Bent hands turn up together",
+      "difficulty": "medium",
+      "usage": "Question word for method"
+    },
+    "i": {
+      "category": "pronouns",
+      "description": "Index finger points to chest",
+      "difficulty": "easy",
+      "usage": "First person singular"
+    },
+    "you": {
+      "category": "pronouns",
+      "description": "Index finger points to person",
+      "difficulty": "easy",
+      "usage": "Second person"
+    },
+    "he": {
+      "category": "pronouns",
+      "description": "Point to male person or side",
+      "difficulty": "easy",
+      "usage": "Third person masculine"
+    },
+    "she": {
+      "category": "pronouns",
+      "description": "Point to female person or side",
+      "difficulty": "easy",
+      "usage": "Third person feminine"
+    },
+    "we": {
+      "category": "pronouns",
+      "description": "Index finger arcs from self to others",
+      "difficulty": "medium",
+      "usage": "First person plural"
+    },
+    "they": {
+      "category": "pronouns",
+      "description": "Point to multiple people or sweep",
+      "difficulty": "medium",
+      "usage": "Third person plural"
+    }
+  },
+  "categories": [
+    "time",
+    "pronouns",
+    "questions",
+    "colors",
+    "food",
+    "greetings",
+    "verbs",
+    "family",
+    "numbers"
+  ],
+  "difficulty_levels": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "total_signs": 53
+}
