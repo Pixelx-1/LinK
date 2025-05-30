@@ -2,16 +2,6 @@
 
 Making digital content accessible for everyone through AI-powered tools and sign language learning.
 
-## 🚀 Quick Deploy
-
-Deploy your LinK platform instantly on your preferred hosting service:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Pixelx-1/LinK)
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Pixelx-1/LinK)
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Pixelx-1/LinK)
-
 ## ✨ Features
 
 - 🧏‍♀️ **Sign Language Learning**: Interactive ASL alphabet and dictionary
