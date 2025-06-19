@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+import path from 'path';
 
 // Import routes
 import toolsRoutes from './routes/tools';
@@ -46,15 +47,16 @@ const swaggerOptions = {
 
 const specs = swaggerJsdoc(swaggerOptions);
 
-// Security middleware
+// Security middleware - Updated CSP for React app
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com"],
-      imgSrc: ["'self'", "data:", "https:"],
-      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https:", "blob:"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      connectSrc: ["'self'"],
     },
   },
 }));
@@ -72,9 +74,9 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// CORS configuration
+// CORS configuration - Allow same origin
 const corsOptions = {
-  origin: process.env.CORS_ORIGINS?.split(',') || ['http://localhost:3000', 'http://localhost:5000'],
+  origin: process.env.CORS_ORIGINS?.split(',') || ['http://localhost:3000', 'http://localhost:5000', 'http://localhost:8000', 'http://localhost:8001'],
   credentials: true,
   optionsSuccessStatus: 200,
 };
@@ -85,8 +87,12 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Serve static files from public directory
-app.use(express.static('public'));
+// Serve static files from uploads directory
+app.use('/uploads', express.static('uploads'));
+
+// Serve React frontend static files
+const frontendBuildPath = path.join(__dirname, '../../frontend/build');
+app.use(express.static(frontendBuildPath));
 
 // Logging middleware
 app.use(morgan('combined', {
@@ -117,35 +123,25 @@ if (process.env.SWAGGER_ENABLED === 'true') {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 }
 
-// Routes
+// API Routes
 app.use('/api/health', healthRoutes);
 app.use('/api/tools', toolsRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/users', userRoutes);
 
-// Root endpoint
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Accessibility Hub API',
-    version: '1.0.0',
-    documentation: process.env.SWAGGER_ENABLED === 'true' ? '/api-docs' : 'Disabled',
-    endpoints: {
-      health: '/api/health',
-      tools: '/api/tools',
-      ai: '/api/ai',
-      chat: '/api/chat',
-      users: '/api/users',
-    },
-  });
-});
-
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({
-    error: 'Route not found',
-    message: `The requested route ${req.originalUrl} does not exist.`,
-  });
+// Serve React app for all non-API routes (SPA routing)
+app.get('*', (req, res) => {
+  // Skip API routes
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({
+      error: 'Route not found',
+      message: `The requested API route ${req.originalUrl} does not exist.`,
+    });
+  }
+  
+  // Serve React app
+  res.sendFile(path.join(frontendBuildPath, 'index.html'));
 });
 
 // Error handling middleware
@@ -166,7 +162,8 @@ process.on('SIGINT', async () => {
 
 // Start server
 app.listen(PORT, () => {
-  logger.info(`🚀 Accessibility Hub API server running on port ${PORT}`);
+  logger.info(`🚀 Accessibility Hub running on port ${PORT}`);
+  logger.info(`🌐 Frontend: http://localhost:${PORT}`);
   logger.info(`📚 API Documentation: http://localhost:${PORT}/api-docs`);
   logger.info(`🏥 Health Check: http://localhost:${PORT}/api/health`);
 });

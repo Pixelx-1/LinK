@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 // Create axios instance with base configuration
+// Using relative paths since frontend and backend are served from same port
 const api = axios.create({
   baseURL: '/api',
   timeout: 30000,

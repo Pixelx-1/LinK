@@ -32,6 +32,12 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+# Kill any existing processes
+print_status "Stopping any existing servers..."
+pkill -f "node.*app.js" 2>/dev/null || true
+pkill -f "react-scripts" 2>/dev/null || true
+sleep 2
+
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then
     print_error "Node.js is not installed. Please install Node.js 18 or later."
@@ -50,14 +56,10 @@ print_status "npm version: $(npm --version)"
 # Create environment file
 if [ ! -f .env ]; then
     print_status "Creating environment file..."
-    cp env.example .env
-    
-    # Set local development values
-    cat >> .env << EOF
-
+    cat > .env << EOF
 # Local development settings
 NODE_ENV=development
-PORT=5000
+PORT=8000
 FRONTEND_PORT=3000
 MONGODB_URI=mongodb://localhost:27017/accessibility-hub
 POSTGRES_URL=postgresql://postgres:postgres@localhost:5432/accessibility_hub
@@ -112,9 +114,8 @@ echo "   - All AI features enabled"
 echo ""
 print_status "Application URLs:"
 echo "   Frontend: http://localhost:3000"
-echo "   Backend API: http://localhost:5000"
-echo "   Health Check: http://localhost:5000/api/health"
-echo "   Dashboard: http://localhost:5000/api/dashboard"
+echo "   Backend API: http://localhost:8000"
+echo "   Health Check: http://localhost:8000/api/health"
 echo ""
 
 # Ask if user wants to start the application
@@ -123,7 +124,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     print_status "Starting backend server..."
     cd backend
-    npm run dev &
+    PORT=8000 npm run dev &
     BACKEND_PID=$!
     
     print_status "Waiting for backend to start..."
@@ -131,7 +132,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     
     print_status "Starting frontend server..."
     cd ../frontend
-    npm start &
+    PORT=3000 npm start &
     FRONTEND_PID=$!
     
     print_success "🎉 Accessibility Hub is now running!"
@@ -140,7 +141,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "   👉 http://localhost:3000"
     echo ""
     echo "📊 API Documentation available at:"
-    echo "   👉 http://localhost:5000/api-docs"
+    echo "   👉 http://localhost:8000/api-docs"
     echo ""
     echo "Press Ctrl+C to stop both servers"
     
